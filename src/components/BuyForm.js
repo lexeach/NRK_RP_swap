@@ -74,7 +74,7 @@ class BuyForm extends Component {
         <div className="mb-5">
           <span className="float-left text-muted">Exchange Rate</span>
               const price = await getPrice()
-          <span className="float-right text-muted">1 BNB = this.setState({output: (price/100 )  GCN</span>
+          <span className="float-right text-muted">1 BNB = this.setState({output: (price/100 )}  GCN</span>
         </div>
         <button className="swapButton">SWAP!</button>
       </form>
