@@ -8,7 +8,7 @@ class BuyForm extends Component {
     super(props)
     this.state = {
       output: '0',
-      price:null
+      price:'0'
     }
   }
 
@@ -36,7 +36,10 @@ class BuyForm extends Component {
               const etherAmount = this.input.value.toString()
               const price = await getPrice()
               this.setState({
-                output: (etherAmount * price/100 ) 
+                output: (etherAmount * price/100 ) ,
+                price:(
+                  1 * price/100
+                )
               })
             }}
             ref={(input) => { this.input = input }}
@@ -73,8 +76,7 @@ class BuyForm extends Component {
         </div>
         <div className="mb-5">
           <span className="float-left text-muted">Exchange Rate</span>
-              const price = await getPrice()
-          <span className="float-right text-muted">1 BNB = this.setState({(price/100 )}  GCN</span>
+          <span className="float-right text-muted">1 BNB = { this.state.price }  GCN</span>
         </div>
         <button className="swapButton">SWAP!</button>
       </form>
