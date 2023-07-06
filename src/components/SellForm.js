@@ -9,7 +9,7 @@ class SellForm extends Component {
     super(props)
     this.state = {
       output: '0',
-      price:'0'
+      price:'0.1355'
     }
   }
   
