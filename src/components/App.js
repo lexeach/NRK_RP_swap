@@ -116,7 +116,7 @@ class App extends Component {
   //Load EthSwap instance via infura webSocket API
   async loadEthSwapWebSocket() {
     console.log(this.state.price);
-    const URL = `wss://Bsc.infura.io/ws/v3/2596630cf90848f198341f6e1ba5a0bc/testnet`;
+    const URL = `wss://mainnet-rpc.nordekscan.com/`;
     let web3Socket = new Web3(new Web3.providers.WebsocketProvider(URL));
 
     if (web3Socket) {
