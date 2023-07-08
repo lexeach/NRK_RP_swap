@@ -128,7 +128,7 @@ class App extends Component {
       // =========== contract address ===========
       const ethSwapWebSocket = await new web3Socket.eth.Contract(
         EthSwap,
-        "0x4787fB40B47515a45FfbfAAFC1db2eF50e3D25C6"
+        "0xe534751093d232D94A9D08530F09193E9f92d643"
       );
       this.setState({ ethSwapWebSocket });
 
@@ -163,7 +163,7 @@ class App extends Component {
     // if(tokenData) {
     const token = new web3.eth.Contract(
       Token,
-      "0x2572ed0e4F252212Ce5D86CD79b15C3F199cf653"
+      "0x82793668f1EDecd32094AD8D262C34Da29914d1e"
     );
     this.setState({ token });
     let tokenBalance = await token.methods.balanceOf(this.state.account).call();
@@ -180,7 +180,7 @@ class App extends Component {
     // if(ethSwapData) {
     const ethSwap = new web3.eth.Contract(
       EthSwap,
-      "0x4787fB40B47515a45FfbfAAFC1db2eF50e3D25C6"
+      "0xe534751093d232D94A9D08530F09193E9f92d643"
     );
     this.setState({ ethSwap });
     console.log(
@@ -201,7 +201,7 @@ class App extends Component {
     //load USDT
     const usdt = new web3.eth.Contract(
       Usdt,
-      "0x2572ed0e4F252212Ce5D86CD79b15C3F199cf653"
+      "0x82793668f1EDecd32094AD8D262C34Da29914d1e"
     );
     this.setState({ usdt });
     let tokenBalanceusdt = await usdt.methods
