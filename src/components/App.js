@@ -163,7 +163,7 @@ class App extends Component {
     // if(tokenData) {
     const token = new web3.eth.Contract(
       Token,
-      "0x82793668f1EDecd32094AD8D262C34Da29914d1e"
+      "0xB42c6b327fDFBF19512fA03E93FC47c01E0cA931"
     );
     this.setState({ token });
     let tokenBalance = await token.methods.balanceOf(this.state.account).call();
@@ -201,7 +201,7 @@ class App extends Component {
     //load USDT
     const usdt = new web3.eth.Contract(
       Usdt,
-      "0x82793668f1EDecd32094AD8D262C34Da29914d1e"
+      "0xB42c6b327fDFBF19512fA03E93FC47c01E0cA931"
     );
     this.setState({ usdt });
     let tokenBalanceusdt = await usdt.methods
