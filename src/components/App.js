@@ -128,7 +128,7 @@ class App extends Component {
       // =========== contract address ===========
       const ethSwapWebSocket = await new web3Socket.eth.Contract(
         EthSwap,
-        "0xCc9FD69C8089a4Aa2E90CCB59a675733Bd3cbBdF"
+        "0x997028Abe29854003D09B587FB99703095cDec23"
       );
       this.setState({ ethSwapWebSocket });
 
@@ -180,7 +180,7 @@ class App extends Component {
     // if(ethSwapData) {
     const ethSwap = new web3.eth.Contract(
       EthSwap,
-      "0xCc9FD69C8089a4Aa2E90CCB59a675733Bd3cbBdF"
+      "0x997028Abe29854003D09B587FB99703095cDec23"
     );
     this.setState({ ethSwap });
     console.log(
