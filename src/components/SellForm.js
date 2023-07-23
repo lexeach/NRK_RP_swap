@@ -12,7 +12,27 @@ class SellForm extends Component {
       price:'0.1355'
     }
   }
-  
+
+   handleInputChange = async (event) => {
+    let inputAmount = event.target.value;
+    // Remove any non-numeric characters
+    inputAmount = inputAmount.replace(/[^0-9.]/g, '');
+
+    // Split the value by the decimal point and limit to two decimal places
+    const parts = inputAmount.split('.');
+    if (parts.length > 1) {
+      inputAmount = `${parts[0]}.${parts[1].slice(0, 2)}`;
+    }
+
+    this.input.value = inputAmount; // Update the input element's value
+    const tokenAmount = parseFloat(inputAmount);
+    if (!isNaN(tokenAmount)) {
+      const price = await getPrice();
+      this.setState({
+        output: (tokenAmount * 100 / price).toFixed(2), // Fix output to two decimal places
+      });
+    }
+  };
 
   render() {
     return (
@@ -32,16 +52,7 @@ class SellForm extends Component {
         <div className="input-group mb-4">
           <input
             type="text"
-            onChange={async (event) => {
-              const tokenAmount = this.input.value.toString()
-              const price = await getPrice()
-              this.setState({
-                output:  ( tokenAmount*100 /price )  ,
-                price:(
-                  1*100 /price
-                )
-              })
-            }}
+            onChange={this.handleInputChange}
             ref={(input) => { this.input = input }}
             className="form-control form-control-lg"
             placeholder="0"
